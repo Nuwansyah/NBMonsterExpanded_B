@@ -1,0 +1,56 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "nba:darkness_watcher",
+      "population_control": "monster"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:biome_filter": [
+          {
+            "all_of": [
+              {
+                "test": "has_biome_tag",
+                "operator": "!=",
+                "value": "frozen"
+              },
+              
+              {
+                "any_of": [
+                  {
+                    "test": "has_biome_tag",
+                    "operator": "==",
+                    "value": "overworld"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "minecraft:spawns_underground": {},
+        "minecraft:brightness_filter": {
+          "min": 0.0,
+          "max": 6.0,
+          "adjust_for_weather": true
+        },
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:density_limit": {
+          "surface": 2,
+          "underground": 3
+      },
+        "minecraft:weight": {
+          "default": 100
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 1
+        }
+      }
+    ]
+  }
+}
