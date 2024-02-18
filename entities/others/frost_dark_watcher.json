@@ -107,7 +107,7 @@
 					"gone"
 				  ]
 				},
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle minecraft:cauldron_explosion_emitter ~~1~",
 						"playsound mob.endermen.portal @a[r=15] ~~~ 2"
@@ -121,7 +121,7 @@
 					"transform"
 				  ]
 				},
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle nba:cloud_red_explosion ~~0.5~",
 						"playsound mob.endermen.portal @a[r=15] ~~~ 2"

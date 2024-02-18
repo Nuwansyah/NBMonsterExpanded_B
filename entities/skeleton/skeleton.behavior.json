@@ -745,7 +745,7 @@
 				}
 			},
 			"zombie_corpse1": {
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle nba:cloud_red_explosion ~~1~",
 						"summon xp_orb ~ ~0.2 ~",
@@ -763,7 +763,7 @@
 				  }
 			},
 			"zombie_corpse2": {
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle nba:cloud_red_explosion ~~1~",
 						"summon xp_orb ~ ~0.2 ~",
@@ -781,7 +781,7 @@
 				  }
 			},
 			"zombie_corpse3": {
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle nba:cloud_red_explosion ~~1~",
 						"summon xp_orb ~ ~0.2 ~",

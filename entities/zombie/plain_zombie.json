@@ -441,8 +441,8 @@
 			"minecraft:behavior.delayed_attack": {
 				"priority": 3,
 				"track_target": true,
-				"attack_duration": 0.75,
-				"hit_delay_pct": 0.25,
+				"attack_duration": 0.5,
+				"speed_multiplier": 1,
 				"reach_multiplier": 3
 			},
 			"minecraft:is_hidden_when_invisible": {

@@ -423,9 +423,10 @@
 		"components": {
 			"minecraft:behavior.delayed_attack": {
 				"priority": 3,
-				"track_target": false,
+				"track_target": true,
+				"attack_duration": 0.5,
 				"speed_multiplier": 1,
-				"attack_duration": 0.75
+				"reach_multiplier": 3
 			},
 			"minecraft:is_hidden_when_invisible": {
 			},

@@ -158,7 +158,7 @@
 		  },
 		"events": {
 			"particle":{
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle minecraft:spore_blossom_shower_particle ~ ~ ~"
 					]

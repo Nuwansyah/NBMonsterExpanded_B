@@ -95,7 +95,7 @@
     }
    },
    "particle":{
-    "run_command": {
+    "queue_command": {
       "command": [
         "particle minecraft:basic_smoke_particle ~ ~ ~"
       ]

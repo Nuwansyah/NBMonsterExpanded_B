@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.100",
+  "format_version": "1.16.0",
  "minecraft:entity": {
   "description": {
     "identifier": "nba:blast_bottle",
@@ -97,7 +97,7 @@
     }
    },
    "particle":{
-    "run_command": {
+    "queue_command": {
       "command": [
         "particle minecraft:basic_smoke_particle ~ ~ ~"
       ]

@@ -240,7 +240,7 @@
 					"nbadead1"
 				  ]
 				},
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle nba:cloud_red_explosion ~~1~",
 						"summon xp_orb ~ ~0.2 ~",

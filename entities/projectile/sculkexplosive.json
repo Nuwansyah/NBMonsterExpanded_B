@@ -68,7 +68,7 @@
     "events": {
       
       "particle":{
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle nba:lava_particle_blue ~ ~0.2 ~"
 					]

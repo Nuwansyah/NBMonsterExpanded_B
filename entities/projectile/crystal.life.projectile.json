@@ -63,7 +63,7 @@
     "events": {
 
       "summon": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "summon nba:life_crystal ~ ~-0.2 ~",
             "particle minecraft:cauldron_explosion_emitter ~~1~",

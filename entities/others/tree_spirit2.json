@@ -232,7 +232,7 @@
 				]
 			  },
 			"angry": {
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle minecraft:villager_angry~ ~1.9 ~"
 					]
@@ -286,7 +286,7 @@
 				  }
 			  },
 			"particle":{
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle nba:green_spell ~ ~1.1 ~"
 					]

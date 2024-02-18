@@ -88,7 +88,7 @@
 					"dissapear"
 				  ]
 				},
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle minecraft:cauldron_explosion_emitter ^ ^ ^"
 					]

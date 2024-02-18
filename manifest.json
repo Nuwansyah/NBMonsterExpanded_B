@@ -2,7 +2,7 @@
 	"format_version": 2,
 	"header": {
 		"name": "NB Monster Expanded Behavior 1.6.5",
-		"description": "Add more monster to the game!",
+		"description": "Add more monster to the game! version 1.6.5",
 		"uuid": "f60572d8-a5e6-4cc3-8904-9608edb2c5af",
 		"version": [1, 0, 0],
 		"min_engine_version": [1, 20, 50]
