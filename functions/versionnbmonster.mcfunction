@@ -1,2 +1,2 @@
 title @s title -v-
-title @s subtitle NB Monster Expanded Version 1.6.5555
+title @s subtitle NB Monster Expanded Version 1.6.5

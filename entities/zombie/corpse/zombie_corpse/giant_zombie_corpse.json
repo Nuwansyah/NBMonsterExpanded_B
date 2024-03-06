@@ -2,7 +2,7 @@
 	"format_version": "1.16.0",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "nba:zombie_warrior_corpse",
+			"identifier": "nba:zombie_giant_corpse",
 			"is_spawnable": false,
 			"is_summonable": false,
 			"is_experimental": false
@@ -25,7 +25,7 @@
 				"value": 0
 			},
 			"minecraft:scale":{
-				"value": 1.20
+				"value": 1.35
 			},
 			"minecraft:despawn": {
 				"despawn_from_distance": {}

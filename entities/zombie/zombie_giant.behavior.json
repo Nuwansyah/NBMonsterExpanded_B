@@ -2,35 +2,25 @@
 	"format_version": "1.16.0",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "nba:zombie_warrior",
+			"identifier": "nba:zombie_giant",
 			"is_spawnable": true,
 			"is_summonable": true,
 			"is_experimental": false
 		},
 		"component_groups": {
-			"nba:stunned":{
-				"minecraft:is_stunned":{},
-				"minecraft:timer": {
-				  "looping": false,
-				  "time": 0.75,
-				  "time_down_event": {
-					"event": "notstunned"
-				  }
-				}
-			},
 			"nbadead1": {
 				"minecraft:transformation": {
 				  "delay": 0,
-				  "into": "nba:zombie_warrior_corpse",
+				  "into": "nba:zombie_giant_corpse",
 				  "preserve_equipment": true
 				}
 			},
 			"nba:roar": {
 				"minecraft:behavior.knockback_roar": {
 					"priority": 5,
-					"duration": 1.75,
+					"duration": 2.25,
 					"cooldown_time": 1.93,
-					"attack_time": 1.0,
+					"attack_time": 1.25,
 					"knockback_damage": 6,
 					"knockback_horizontal_strength": 4,
 					"knockback_vertical_strength": 5,
@@ -91,10 +81,11 @@
 				},
 				"minecraft:behavior.delayed_attack": {
 					"priority": 3,
-					"track_target": false,
+					"track_target": true,
 					"speed_multiplier": 1,
-					"attack_duration": 0.75,
-					"reach_multiplier": 2
+					"attack_duration": 1.25,
+					"reach_multiplier": 4,
+					"hit_delay_pct": 0.33
 				}
 			},
 			"roarcooldown": {
@@ -137,7 +128,7 @@
 			"minecraft:is_hidden_when_invisible": {
 			},
 			"minecraft:scale":{
-				"value": 1.20
+				"value": 1.35
 			},
 			
 			"minecraft:nameable": {},
@@ -194,9 +185,6 @@
 			"minecraft:loot": {
 				"table": "loot_tables/entities/zombie.json"
 			},
-			"minecraft:equipment": {
-				"table": "loot_tables/gears/zombie_warrior.json"
-			  },
 			
 			"minecraft:knockback_resistance": {
 				"value": 2
@@ -310,34 +298,24 @@
 					}
 				]
 			},
-			"stunned": {
-				"add": {
-				  "component_groups": [
-					"nba:stunned"
-				  ]
-				}
-			},
-			"notstunned": {
-				"remove": {
-				  "component_groups": [
-					"nba:stunned"
-				  ]
-				}
-			},
+			
 			"zombie_corpse1": {
-				"add": {
-				  "component_groups": [
-					"nbadead1"
-				  ]
-				},
 				"queue_command": {
 					"command": [
 						"particle nba:cloud_red_explosion ~~1~",
 						"summon xp_orb ~ ~0.2 ~",
 						"summon xp_orb ~ ~0.2 ~",
-						"summon xp_orb ~ ~0.2 ~"
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s zombie_corpseeffect1"
 					]
 				}
+			},
+			"zombie_corpseeffect1":{
+				"add": {
+					"component_groups": [
+					  "nbadead1"
+					]
+				  }
 			},
 			"addroar": {
 				"add": {
