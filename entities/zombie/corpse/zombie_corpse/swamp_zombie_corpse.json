@@ -14,26 +14,41 @@
 			"nbacorpse1": {
 				"minecraft:variant": {
 					"value": 0
+				  },
+				  "minecraft:scale": {
+					  "value":  0.95
 				  }
 			},
 			"nbacorpse2": {
 				"minecraft:variant": {
 					"value": 1
+				  },
+				  "minecraft:scale": {
+					  "value":  0.95
 				  }
 			},
 			"nbacorpse3": {
 				"minecraft:variant": {
 					"value": 2
+				  },
+				  "minecraft:scale": {
+					  "value":  0.95
 				  }
 			},
 			"nbacorpse4": {
 				"minecraft:variant": {
 					"value": 3
+				},
+				"minecraft:scale": {
+					"value":  0.95
 				}
 			},
 			"nbacorpse5": {
 				"minecraft:variant": {
 					"value": 4
+				  },
+				  "minecraft:scale": {
+					  "value":  0.95
 				  }
 			},
 			"nbacorpse1_baby": {

@@ -40,6 +40,9 @@
 				"event": "zombie_corpse1",
 				"target": "self"
 			},
+			"minecraft:scale": {
+				"value":  0.95
+			},
 			"minecraft:is_hidden_when_invisible": {
 			},
 			"minecraft:experience_reward": {
@@ -223,19 +226,24 @@
 				}
 			},
 			"zombie_corpse1": {
-				"add": {
-				  "component_groups": [
-					"nbadead1"
-				  ]
-				},
+				
 				"queue_command": {
 					"command": [
-						"particle nba:cloud_red_explosion ~~1~",
+						"particle nba:cloud_red_explosion ~ ~1 ~",
 						"summon xp_orb ~ ~0.2 ~",
 						"summon xp_orb ~ ~0.2 ~",
-						"summon xp_orb ~ ~0.2 ~"
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s zombie_corpseeffect"
 					]
 				}
+			},
+			"zombie_corpseeffect": {
+				
+				"add": {
+					"component_groups": [
+					  "nbadead1"
+					]
+				  }
 			}
 		}
 	}

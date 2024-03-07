@@ -28,7 +28,7 @@
           "surface": 5
       },
         "minecraft:weight": {
-          "default": 75
+          "default": 70
         },
         
         "minecraft:biome_filter": {

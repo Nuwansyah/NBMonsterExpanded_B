@@ -1,0 +1,171 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+      "description": {
+        "identifier": "nba:xp_orb_1",
+        "is_spawnable": false,
+        "is_summonable": true,
+        "is_experimental": false
+      },
+      "component_groups": {
+        "dissapear": {
+          "minecraft:instant_despawn":{
+            "remove_child_entities": false
+          }
+        },
+
+        "xp_value_5": {
+          "minecraft:variant": {
+            "value": 0
+          },
+          "minecraft:entity_sensor": {
+          "sensor_range": 0.8,
+          "relative_range": false,
+          "minimum_count": 1,
+          "event_filters": {
+            "any_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              }
+            ]
+          },
+          "event": "give_exp_5"
+          }
+        },
+        "xp_value_25": {
+          
+          "minecraft:variant": {
+            "value": 1
+          },
+          "minecraft:entity_sensor": {
+          "sensor_range": 0.8,
+          "relative_range": false,
+          "minimum_count": 1,
+          "event_filters": {
+            "any_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              }
+            ]
+          },
+          "event": "give_exp_25"
+          }
+        }
+      },
+
+
+      "components": {
+        "minecraft:collision_box": {
+          "width": 0.001,
+          "height": 0.001
+        },
+        "minecraft:movement": {
+          "value": 0.5
+        },
+        "minecraft:type_family": {
+          "family": [ "inanimate" ]
+        },
+        "minecraft:health": {
+          "value": 5,
+          "max": 5
+        },
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        },
+        
+        "minecraft:buoyant":{
+          "apply_gravity": false,
+          "liquid_blocks": ["minecraft:flowing_water", "minecraft:water"] 
+        },
+          "minecraft:physics": {
+        },
+        "minecraft:pushable": {
+          "is_pushable": true,
+          "is_pushable_by_piston": true
+        },
+        "minecraft:conditional_bandwidth_optimization": {
+          "default_values": {
+            "max_optimized_distance": 80.0,
+            "max_dropped_ticks": 10,
+            "use_motion_prediction_hints": true
+          }
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 3
+        },
+        "minecraft:behavior.nearest_attackable_target":{
+          "priority": 2,
+          "must_see":false,
+          "reselect_targets": true,
+          "within_radius": 5.0,
+          "entity_types":[
+            {
+              "filters":{
+                "test": "is_family", "subject": "other", "value": "player"
+              },
+              "max_dist":5
+            }
+          ]
+        },
+        "minecraft:movement.basic": {},
+			  "minecraft:navigation.walk": {
+				  "is_amphibious": true,
+				  "can_pass_doors": true,
+				  "can_walk": true,
+				  "can_break_doors": true
+			  }
+
+      },
+      "events": {
+
+        
+        "dissapear": {
+          "add": {
+           "component_groups": [
+            "dissapear"
+           ]
+          }
+          },
+        "exp_sensor_5": {
+            "add": {
+              "component_groups": [
+               "xp_value_5"
+              ]
+             }
+          },
+        "exp_sensor_25": {
+            "add": {
+              "component_groups": [
+                 "xp_value_25"
+              ]
+              }
+          },
+        
+        "give_exp_5": {
+          "queue_command": {
+            "command": [
+              "xp 5 @p",
+              "playsound random.orb_1 @p ~ ~ ~ 0.2",
+              "event entity @s dissapear"
+            ]
+          }
+          },
+        "give_exp_25": {
+          "queue_command": {
+            "command": [
+              "xp 25 @p",
+              "playsound random.orb_1 @p ~ ~ ~ 0.2",
+              "event entity @s dissapear"
+            ]
+          }
+          }
+      }
+    }
+}

@@ -14,8 +14,8 @@
             "value": "lush_caves"
           },
           "minecraft:brightness_filter": {
-            "min": 0.0,
-            "max": 7.0,
+            "min": 0,
+            "max": 7,
             "adjust_for_weather": true
           },
           "minecraft:difficulty_filter": {
@@ -23,11 +23,7 @@
             "max": "hard"
           },
           "minecraft:weight": {
-            "default": 250
-          },
-          "minecraft:herd": {
-            "min_size": 1,
-            "max_size": 1
+            "default": 100
           }
         }
       ]

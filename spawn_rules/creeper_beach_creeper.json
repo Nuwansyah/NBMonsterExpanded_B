@@ -8,14 +8,10 @@
     "conditions": [
       {
         "minecraft:spawns_on_surface": {},
-        "minecraft:biome_filter": {
-          "test": "has_biome_tag",
-          "operator":"==",
-          "value": "beach"
-        },
+        
         "minecraft:brightness_filter": {
-          "min": 0.0,
-          "max": 7.0,
+          "min": 0,
+          "max": 7,
           "adjust_for_weather": true
         },
         "minecraft:difficulty_filter": {
@@ -23,11 +19,15 @@
           "max": "hard"
         },
         "minecraft:weight": {
-          "default": 150
+          "default": 100
         },
-        "minecraft:herd": {
-          "min_size": 1,
-          "max_size": 1
+        "minecraft:density_limit": {
+          "surface": 5
+        },
+        "minecraft:biome_filter": {
+          "test": "has_biome_tag",
+          "operator":"==",
+          "value": "beach"
         }
       }
     ]

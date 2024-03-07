@@ -24,6 +24,9 @@
 				"minecraft:movement": {
 					"value": 0.23
 				},
+				"minecraft:scale": {
+					"value":  0.95
+				},
 				"minecraft:rideable": {
 					"seat_count": 1,
 					"family_types": ["zombie"],
@@ -61,6 +64,9 @@
 						"lock_rider_rotation": 0
 					}
 				},
+				"minecraft:scale": {
+					"value":  0.95
+				},
 				"minecraft:behavior.mount_pathing": {
 					"priority": 2,
 					"speed_multiplier": 1.25,
@@ -89,6 +95,9 @@
 					"position": [0, 24, 4],
 					"lock_rider_rotation": 0
 					}
+				},
+				"minecraft:scale": {
+					"value":  0.95
 				},
 				"minecraft:behavior.mount_pathing": {
 				"priority": 2,
@@ -119,6 +128,9 @@
 					"lock_rider_rotation": 0
 					}
 				},	
+				"minecraft:scale": {
+					"value":  0.95
+				},
 				"minecraft:behavior.mount_pathing": {
 				"priority": 2,
 				"speed_multiplier": 1.25,
@@ -139,6 +151,9 @@
 				},
 				"minecraft:movement": {
 				"value": 0.23
+				},
+				"minecraft:scale": {
+					"value":  0.95
 				},
 				"minecraft:rideable": {
 				"seat_count": 1,
@@ -798,104 +813,94 @@
 				}
 			},
 			"zombie_corpse1": {
-				"add": {
-				  "component_groups": [
-					"nbadead1"
-				  ]
-				},
-				"remove": {
-					"component_groups": [
-					  "nba:zombie"
-					]
-				  },
 				"queue_command": {
 					"command": [
 						"particle nba:cloud_red_explosion ~~1~",
 						"summon xp_orb ~ ~0.2 ~",
 						"summon xp_orb ~ ~0.2 ~",
-						"summon xp_orb ~ ~0.2 ~"
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s zombie_corpseeffect1"
 					]
 				}
+			},
+			"zombie_corpseeffect1":{
+				"add": {
+					"component_groups": [
+					  "nbadead1"
+					]
+				  }
 			},
 			"zombie_corpse2": {
-				"add": {
-				  "component_groups": [
-					"nbadead2"
-				  ]
-				},
-				"remove": {
-					"component_groups": [
-					  "nba:zombie2"
-					]
-				  },
 				"queue_command": {
 					"command": [
 						"particle nba:cloud_red_explosion ~~1~",
 						"summon xp_orb ~ ~0.2 ~",
 						"summon xp_orb ~ ~0.2 ~",
-						"summon xp_orb ~ ~0.2 ~"
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s zombie_corpseeffect2"
 					]
 				}
+			},
+			"zombie_corpseeffect2":{
+				"add": {
+					"component_groups": [
+					  "nbadead2"
+					]
+				  }
 			},
 			"zombie_corpse3": {
-				"add": {
-				  "component_groups": [
-					"nbadead3"
-				  ]
-				},
-				"remove": {
-					"component_groups": [
-					  "nba:zombie3"
-					]
-				  },
 				"queue_command": {
 					"command": [
 						"particle nba:cloud_red_explosion ~~1~",
 						"summon xp_orb ~ ~0.2 ~",
 						"summon xp_orb ~ ~0.2 ~",
-						"summon xp_orb ~ ~0.2 ~"
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s zombie_corpseeffect3"
 					]
 				}
+			},
+			"zombie_corpseeffect3":{
+				"add": {
+					"component_groups": [
+					  "nbadead3"
+					]
+				  }
 			},
 			"zombie_corpse4": {
-				"add": {
-				  "component_groups": [
-					"nbadead4"
-				  ]
-				},
-				"remove": {
-					"component_groups": [
-					  "nba:zombie4"
-					]
-				  },
 				"queue_command": {
 					"command": [
 						"particle nba:cloud_red_explosion ~~1~",
 						"summon xp_orb ~ ~0.2 ~",
 						"summon xp_orb ~ ~0.2 ~",
-						"summon xp_orb ~ ~0.2 ~"
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s zombie_corpseeffect4"
 					]
 				}
 			},
-			"zombie_corpse5": {
+			"zombie_corpseeffect4":{
 				"add": {
-				  "component_groups": [
-					"nbadead5"
-				  ]
-				},
-				"remove": {
 					"component_groups": [
-					  "nba:zombie5"
+					  "nbadead4"
 					]
-				  },
+				  }
+			},
+			"zombie_corpse5": {
 				"queue_command": {
 					"command": [
 						"particle nba:cloud_red_explosion ~~1~",
 						"summon xp_orb ~ ~0.2 ~",
 						"summon xp_orb ~ ~0.2 ~",
-						"summon xp_orb ~ ~0.2 ~"
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s zombie_corpseeffect5"
 					]
 				}
+			},
+			"zombie_corpseeffect5":{
+				"add": {
+					"component_groups": [
+					  "nbadead5"
+					]
+				  }
 			}
 		}
 	}

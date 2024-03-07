@@ -22,6 +22,9 @@
 				"minecraft:movement": {
 					"value": 0.23
 				},
+				"minecraft:scale": {
+					"value":  0.95
+				},
 				"minecraft:rideable": {
 					"seat_count": 1,
 					"family_types": ["zombie"],
@@ -71,6 +74,9 @@
 			
 			"minecraft:movement": {
 				"value": 0.23
+			},
+			"minecraft:scale": {
+				"value":  0.95
 			},
 			"minecraft:rideable": {
 				"seat_count": 1,
@@ -123,6 +129,9 @@
 			"minecraft:movement": {
 			"value": 0.23
 			},
+			"minecraft:scale": {
+				"value":  0.95
+			},
 			"minecraft:rideable": {
 			"seat_count": 1,
 			"family_types": ["zombie"],
@@ -173,6 +182,9 @@
 				"minecraft:movement": {
 				"value": 0.23
 				},
+				"minecraft:scale": {
+					"value":  0.95
+				},
 				"minecraft:rideable": {
 				"seat_count": 1,
 				"family_types": ["zombie"],
@@ -222,6 +234,9 @@
 					
 					"minecraft:movement": {
 					"value": 0.23
+					},
+					"minecraft:scale": {
+						"value":  0.95
 					},
 					"minecraft:rideable": {
 					"seat_count": 1,
@@ -457,6 +472,9 @@
 				"minecraft:movement": {
 				"value": 0.26
 				},
+				"minecraft:scale": {
+					"value":  0.95
+				},
 				"minecraft:rideable": {
 				"seat_count": 1,
 				"family_types": ["zombie"],
@@ -509,6 +527,9 @@
 			"nba:zzombie2": {
 				"minecraft:movement": {
 					"value": 0.26
+				},
+				"minecraft:scale": {
+					"value":  0.95
 				},
 				"minecraft:rideable": {
 					"seat_count": 1,
@@ -563,6 +584,9 @@
 				"minecraft:movement": {
 					"value": 0.26
 				},
+				"minecraft:scale": {
+					"value":  0.95
+				},
 				"minecraft:rideable": {
 					"seat_count": 1,
 					"family_types": ["zombie"],
@@ -616,6 +640,9 @@
 				"minecraft:movement": {
 					"value": 0.26
 				},
+				"minecraft:scale": {
+					"value":  0.95
+				},
 				"minecraft:rideable": {
 					"seat_count": 1,
 					"family_types": ["zombie"],
@@ -668,6 +695,9 @@
 			"nba:zzombie5": {
 				"minecraft:movement": {
 					"value": 0.26
+				},
+				"minecraft:scale": {
+					"value":  0.95
 				},
 				"minecraft:rideable": {
 					"seat_count": 1,

@@ -14,8 +14,8 @@
           "value": "monster"
         },
         "minecraft:brightness_filter": {
-          "min": 0.0,
-          "max": 7.0,
+          "min": 0,
+          "max": 7,
           "adjust_for_weather": true
         },
         "minecraft:difficulty_filter": {
@@ -23,7 +23,7 @@
           "max": "hard"
         },
         "minecraft:weight": {
-          "default": 1
+          "default": 5
         },
         "minecraft:herd": {
           "min_size": 1,

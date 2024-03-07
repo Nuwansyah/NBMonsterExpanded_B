@@ -14,8 +14,8 @@
           "value": "swamp"
         },
         "minecraft:brightness_filter": {
-          "min": 0.0,
-          "max": 7.0,
+          "min": 0,
+          "max": 7,
           "adjust_for_weather": true
         },
         "minecraft:difficulty_filter": {
@@ -23,12 +23,21 @@
           "max": "hard"
         },
         "minecraft:weight": {
-          "default": 250
+          "default": 100
         },
         "minecraft:herd": {
           "min_size": 2,
           "max_size": 4
-        }
+        },
+        "minecraft:permute_type": [
+          {
+            "weight": 95
+          },
+          {
+            "weight": 5,
+            "entity_type": "minecraft:zombie_villager_v2"
+          }
+        ]
       }
     ]
   }

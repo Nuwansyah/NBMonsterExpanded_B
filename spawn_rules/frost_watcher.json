@@ -15,20 +15,20 @@
         },
         "minecraft:spawns_underground": {},
         "minecraft:brightness_filter": {
-          "min": 0.0,
-          "max": 6.0,
+          "min": 0,
+          "max": 6,
           "adjust_for_weather": true
         },
         "minecraft:difficulty_filter": {
           "min": "easy",
           "max": "hard"
         },
+        "minecraft:density_limit": {
+          "surface": 3,
+          "underground": 4
+      },
         "minecraft:weight": {
-          "default": 300
-        },
-        "minecraft:herd": {
-          "min_size": 1,
-          "max_size": 1
+          "default": 100
         }
       }
     ]

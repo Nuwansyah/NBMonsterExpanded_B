@@ -18,16 +18,25 @@
             "max_size": 4
           },
         "minecraft:brightness_filter": {
-          "min": 0.0,
-          "max": 7.0,
+          "min": 0,
+          "max": 7,
           "adjust_for_weather": true
         },
+        "minecraft:permute_type": [
+          {
+            "weight": 95
+          },
+          {
+            "weight": 5,
+            "entity_type": "minecraft:zombie_villager_v2"
+          }
+        ],
         "minecraft:difficulty_filter": {
           "min": "easy",
           "max": "hard"
         },
         "minecraft:weight": {
-          "default": 250
+          "default": 100
         }
       }
     ]

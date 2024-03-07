@@ -2,7 +2,7 @@
   "format_version": "1.8.0",
   "minecraft:spawn_rules": {
     "description": {
-      "identifier": "nba:zombie_warrior",
+      "identifier": "nba:zombie_giant",
       "population_control": "monster"
     },
     "conditions": [
@@ -15,8 +15,8 @@
           "value": "monster"
         },
         "minecraft:brightness_filter": {
-          "min": 0.0,
-          "max": 1.0,
+          "min": 0,
+          "max": 6,
           "adjust_for_weather": true
         },
         "minecraft:weight": {
