@@ -427,6 +427,9 @@
 				"priority": 2,
 				"speed_multiplier": 1
 			},
+			"minecraft:scale": {
+				"value":  0.95
+			},
 			"minecraft:behavior.equip_item": {
 				"priority": 3
 			},

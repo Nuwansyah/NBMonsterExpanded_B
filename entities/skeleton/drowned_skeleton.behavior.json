@@ -337,6 +337,9 @@
 				"pickup_based_on_chance": true,
 				"can_pickup_any_item": false
 			},
+			"minecraft:scale": {
+				"value":  0.95
+			},
 			"minecraft:behavior.random_stroll": {
 				"priority": 6,
 				"speed_multiplier": 1

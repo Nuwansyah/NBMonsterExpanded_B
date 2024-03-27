@@ -154,6 +154,9 @@
 				"value": 27,
 				"max": 27
 			},
+			"minecraft:scale": {
+				"value":  0.95
+			},
 			"minecraft:hurt_on_condition": {
 				"damage_conditions": [
 					{

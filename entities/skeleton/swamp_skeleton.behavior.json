@@ -401,6 +401,9 @@
 				"avoid_sun": true,
 				"avoid_water": true
 			},
+			"minecraft:scale": {
+				"value":  0.95
+			},
 			"minecraft:movement.basic": {},
 			"minecraft:jump.static": {},
 			"minecraft:can_climb": {},

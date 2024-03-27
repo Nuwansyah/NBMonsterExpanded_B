@@ -330,6 +330,9 @@
 					"target": "self"
 				}
 			},
+			"minecraft:scale": {
+				"value":  0.95
+			},
 			"minecraft:is_hidden_when_invisible": {
 			},
 			"minecraft:experience_reward": {

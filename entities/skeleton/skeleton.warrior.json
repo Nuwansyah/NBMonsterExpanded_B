@@ -124,6 +124,9 @@
 			"minecraft:movement": {
 				"value": 0.25
 			},
+			"minecraft:scale": {
+				"value":  0.95
+			},
 			"minecraft:navigation.walk": {
 				"is_amphibious": true,
 				"avoid_sun": true,
