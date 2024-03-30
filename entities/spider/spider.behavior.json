@@ -11,28 +11,90 @@
 			"nba:spidertype1":{
 				"minecraft:variant": {
 					"value": 0
-				  }
+				  },
+				  "minecraft:on_death": {
+					"event": "corpse1",
+					"target": "self"
+				}
 			},
 			"nba:spidertype2":{
 				"minecraft:variant": {
 					"value": 1
-				  }
+				  },
+				  "minecraft:on_death": {
+					"event": "corpse2",
+					"target": "self"
+				}
 			},
 			"nba:spidertype3":{
 				"minecraft:variant": {
 					"value": 2
-				  }
+				  },
+				  "minecraft:on_death": {
+					"event": "corpse3",
+					"target": "self"
+				}
 			},
 			"nba:spidertype4":{
 				"minecraft:variant": {
 					"value": 3
-				  }
+				  },
+				  "minecraft:on_death": {
+					"event": "corpse4",
+					"target": "self"
+				}
 			},
 			"nba:spidertype5":{
 				"minecraft:variant": {
 					"value": 4
+				  },
+				  "minecraft:on_death": {
+					"event": "corpse5",
+					"target": "self"
+				}
+			},
+			"nbadead1": {
+				"minecraft:transformation": {
+					"delay": 0,
+					"into": "nba:spider_corpse<nba:corpse1>"
 				  }
 			},
+			"nbadead2": {
+				"minecraft:transformation": {
+					"delay": 0,
+					"into": "nba:spider_corpse<nba:corpse2>"
+				  }
+			},
+			"nbadead3": {
+				"minecraft:transformation": {
+					"delay": 0,
+					"into": "nba:spider_corpse<nba:corpse3>"
+				  }
+			},
+			"nbadead4": {
+				"minecraft:transformation": {
+					"delay": 0,
+					"into": "nba:spider_corpse<nba:corpse4>"
+				  }
+			},
+			"nbadead5": {
+				"minecraft:transformation": {
+					"delay": 0,
+					"into": "nba:spider_corpse<nba:corpse5>"
+				  }
+			},
+
+			"nba:stunned":{
+				"minecraft:is_stunned":{},
+				"minecraft:timer": {
+				  "looping": false,
+				  "time": 0.5,
+				  "time_down_event": {
+					"event": "notstunned"
+				  }
+				}
+			},
+
 			
 			"minecraft:spider_jockey": {
 				"minecraft:addrider": {
@@ -151,6 +213,29 @@
 			}
 		},
 		"components": {
+			"minecraft:behavior.delayed_attack": {
+				"priority": 3,
+				"track_target": true,
+				"attack_duration": 0.83,
+				"speed_multiplier": 1,
+				"reach_multiplier": 2
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+				  {
+					"on_damage": {
+					  "filters": {
+						"all_of": [
+						  { "test": "has_damage", "value": "attack" },
+						  { "test": "has_component", "subject": "self", "operator": "!=", "value": "minecraft:is_stunned" }
+						]
+					  },
+					  "event": "stunned"
+					},
+					"deals_damage": true
+				  }
+				]
+			  },
 			"minecraft:is_hidden_when_invisible": {
 			},
 			"minecraft:experience_reward": {
@@ -168,8 +253,17 @@
 				"table": "loot_tables/entities/spider.json"
 			},
 			"minecraft:collision_box": {
-				"width": 1.4,
-				"height": 0.9
+				"width": 1,
+				"height": 0.5
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 1,
+						"height": 0.5,
+						"pivot": [0, 0.55, 0]
+					}
+				]
 			},
 			"minecraft:health": {
 				"value": 16,
@@ -262,10 +356,6 @@
 										{
 											"test": "is_daytime",
 											"value": false
-										},
-										{
-											"test": "is_snow_covered",
-											"value": true
 										},
 										{
 											"test": "is_underground",
@@ -372,6 +462,110 @@
 				"remove": {
 					"component_groups": ["minecraft:spider_angry"]
 				}
+			},
+			"stunned": {
+				"add": {
+				  "component_groups": [
+					"nba:stunned"
+				  ]
+				}
+			},
+			"notstunned": {
+				"remove": {
+				  "component_groups": [
+					"nba:stunned"
+				  ]
+				}
+			},
+			"corpse1": {
+				"queue_command": {
+					"command": [
+						"particle nba:cloud_red_explosion ~~1~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s corpseeffect1"
+					]
+				}
+			},
+			"corpseeffect1":{
+				"add": {
+					"component_groups": [
+					  "nbadead1"
+					]
+				  }
+			},
+			"corpse2": {
+				"queue_command": {
+					"command": [
+						"particle nba:cloud_red_explosion ~~1~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s corpseeffect2"
+					]
+				}
+			},
+			"corpseeffect2":{
+				"add": {
+					"component_groups": [
+					  "nbadead2"
+					]
+				  }
+			},
+			"corpse3": {
+				"queue_command": {
+					"command": [
+						"particle nba:cloud_red_explosion ~~1~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s corpseeffect3"
+					]
+				}
+			},
+			"corpseeffect3":{
+				"add": {
+					"component_groups": [
+					  "nbadead3"
+					]
+				  }
+			},
+			"corpse4": {
+				"queue_command": {
+					"command": [
+						"particle nba:cloud_red_explosion ~~1~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s corpseeffect4"
+					]
+				}
+			},
+			"corpseeffect4":{
+				"add": {
+					"component_groups": [
+					  "nbadead4"
+					]
+				  }
+			},
+			"corpse5": {
+				"queue_command": {
+					"command": [
+						"particle nba:cloud_red_explosion ~~1~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s corpseeffect5"
+					]
+				}
+			},
+			"corpseeffect5":{
+				"add": {
+					"component_groups": [
+					  "nbadead5"
+					]
+				  }
 			}
 		}
 	}

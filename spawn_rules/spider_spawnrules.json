@@ -25,7 +25,7 @@
           },
   
           "minecraft:weight": {
-            "default": 100
+            "default": 0
           },
           
           "minecraft:biome_filter": [
@@ -34,46 +34,7 @@
                 {
                   "test": "has_biome_tag",
                   "operator": "!=",
-                  "value": "cold"
-                },
-                {
-                  "test": "has_biome_tag",
-                  "operator": "!=",
-                  "value": "jungle"
-                },
-                {
-                  "test": "has_biome_tag",
-                  "operator": "!=",
-                  "value": "desert"
-                },
-                {
-                  "test": "has_biome_tag",
-                  "operator": "!=",
-                  "value": "ice"
-                },
-                {
-                  "test": "has_biome_tag",
-                  "operator": "!=",
-                  "value": "mesa"
-                },
-                {
-                  "test": "has_biome_tag",
-                  "operator": "!=",
-                  "value": "swamp"
-                },
-                {
-                  "test": "has_biome_tag",
-                  "operator": "!=",
-                  "value": "frozen"
-                },
-                {
-                  "any_of": [
-                    {
-                      "test": "has_biome_tag",
-                      "operator": "==",
-                      "value": "monster"
-                    }
-                  ]
+                  "value": "overworld"
                 }
               ]
             }

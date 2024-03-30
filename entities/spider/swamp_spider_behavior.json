@@ -147,8 +147,17 @@
 				"table": "loot_tables/entities/spider.json"
 			},
 			"minecraft:collision_box": {
-				"width": 1.4,
-				"height": 0.9
+				"width": 1,
+				"height": 0.5
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 1,
+						"height": 0.5,
+						"pivot": [0, 0.55, 0]
+					}
+				]
 			},
 			"minecraft:health": {
 				"value": 16,
