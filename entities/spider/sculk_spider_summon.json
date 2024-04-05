@@ -2,50 +2,25 @@
 	"format_version": "1.16.0",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "nba:sculk_spider_summon",
+			"identifier": "nba:sculk_spider_mini",
 			"is_spawnable": false,
 			"is_summonable": true,
 			"is_experimental": false
 		},
 		"component_groups": {
-			"small":{
-				"minecraft:scale": {
-					"value":  0.30
-				},
-				"minecraft:health": {
-					"value": 8,
-					"max": 8
-				},
-				"minecraft:experience_reward": {
-					"on_death": "3"
-				}
-			},
-			"medium":{
-				"minecraft:scale": {
-					"value":  0.5
-				},
-				"minecraft:health": {
-					"value": 12,
-					"max": 12
-				},
-				"minecraft:experience_reward": {
-					"on_death": "3"
-				}
-			},
-			"big":{
-				"minecraft:scale": {
-					"value":  0.7
-				},
-				"minecraft:health": {
-					"value": 14,
-					"max": 14
-				},
-				"minecraft:experience_reward": {
-					"on_death": "3"
-				}
+			"nbadead1": {
+				"minecraft:transformation": {
+					"delay": 0,
+					"into": "nba:sculk_spider_small_corpse"
+				  }
 			}
+			
 		},
 		"components": {
+			"minecraft:on_death": {
+				"event": "corpse1",
+				"target": "self"
+			},
 			"minecraft:is_hidden_when_invisible": {
 			},
 			"minecraft:nameable": {},
@@ -55,6 +30,16 @@
 			"minecraft:breathable": {
 				"total_supply": 15,
 				"suffocate_time": 0
+			},
+			"minecraft:scale": {
+				"value":  0.45
+			},
+			"minecraft:health": {
+				"value": 15,
+				"max": 8
+			},
+			"minecraft:experience_reward": {
+				"on_death": "3"
 			},
 			"minecraft:behavior.leap_at_target": {
 				"priority": 4,
@@ -188,6 +173,24 @@
 					}
 					
 				]
+			},
+			"corpse1": {
+				"queue_command": {
+					"command": [
+						"particle nba:cloud_cyan_explosion ~~1~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s corpseeffect1"
+					]
+				}
+			},
+			"corpseeffect1":{
+				"add": {
+					"component_groups": [
+					  "nbadead1"
+					]
+				  }
 			}
 		}
 	}

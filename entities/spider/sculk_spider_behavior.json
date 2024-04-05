@@ -40,9 +40,52 @@
 				"minecraft:knockback_resistance": {
 					"value": 0.7
 				}
+			},
+			"nbadead1": {
+				"minecraft:transformation": {
+					"delay": 0,
+					"into": "nba:sculk_spider_corpse"
+				  }
+			},
+			"nba:stunned":{
+				"minecraft:is_stunned":{},
+				"minecraft:timer": {
+				  "looping": false,
+				  "time": 0.5,
+				  "time_down_event": {
+					"event": "notstunned"
+				  }
+				}
 			}
 		},
 		"components": {
+			"minecraft:behavior.delayed_attack": {
+				"priority": 3,
+				"track_target": true,
+				"attack_duration": 0.83,
+				"speed_multiplier": 1,
+				"reach_multiplier": 2
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+				  {
+					"on_damage": {
+					  "filters": {
+						"all_of": [
+						  { "test": "has_damage", "value": "attack" },
+						  { "test": "has_component", "subject": "self", "operator": "!=", "value": "minecraft:is_stunned" }
+						]
+					  },
+					  "event": "stunned"
+					},
+					"deals_damage": true
+				  }
+				]
+			  },
+			  "minecraft:on_death": {
+				"event": "corpse1",
+				"target": "self"
+			},
 			"minecraft:is_hidden_when_invisible": {
 			},
 			"minecraft:behavior.summon_entity":{
@@ -53,7 +96,7 @@
 						"max_activation_range": 5.0,
 						"cooldown_time": 20.0,
 						"weight": 100,
-						"cast_duration": 3.0,
+						"cast_duration": 5.0,
 						"particle_color": "#099425", 
 						"start_sound_event": "mob.endermen.portal",
 						"sequence": [
@@ -64,7 +107,7 @@
 							"base_delay": 3.0,
 							"delay_per_summon": 0.0,
 							"num_entities_spawned": 4,
-							"entity_type": "nba:sculk_spider_summon",
+							"entity_type": "nba:sculk_spider_mini",
 							"size": 0.8,
 							"entity_lifespan": 29.1,
 							"sound_event": "mob.endermen.portal"
@@ -220,6 +263,38 @@
 					}
 					
 				]
+			},
+			"stunned": {
+				"add": {
+				  "component_groups": [
+					"nba:stunned"
+				  ]
+				}
+			},
+			"notstunned": {
+				"remove": {
+				  "component_groups": [
+					"nba:stunned"
+				  ]
+				}
+			},
+			"corpse1": {
+				"queue_command": {
+					"command": [
+						"particle nba:cloud_red_explosion ~~1~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s corpseeffect1"
+					]
+				}
+			},
+			"corpseeffect1":{
+				"add": {
+					"component_groups": [
+					  "nbadead1"
+					]
+				  }
 			}
 		}
 	}
