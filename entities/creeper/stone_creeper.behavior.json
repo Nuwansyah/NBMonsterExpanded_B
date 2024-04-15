@@ -56,9 +56,45 @@
 					"event": "particle"
 					
 				  }
+			},
+			"nbadead1": {
+				"minecraft:transformation": {
+					"delay": 0,
+					"into": "nba:stone_creeper_corpse"
+				  }
+			},
+			"nba:stunned":{
+				"minecraft:is_stunned":{},
+				"minecraft:timer": {
+				  "looping": false,
+				  "time": 0.5,
+				  "time_down_event": {
+					"event": "notstunned"
+				  }
+				}
 			}
 		},
 		"components": {
+			"minecraft:on_death": {
+				"event": "corpse1",
+				"target": "self"
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+				  {
+					"on_damage": {
+					  "filters": {
+						"all_of": [
+						  { "test": "has_damage", "value": "attack" },
+						  { "test": "has_component", "subject": "self", "operator": "!=", "value": "minecraft:is_stunned" }
+						]
+					  },
+					  "event": "stunned"
+					},
+					"deals_damage": true
+				  }
+				]
+			},
 			"minecraft:is_hidden_when_invisible": {
 			},
 			"minecraft:type_family": {
@@ -259,7 +295,7 @@
 					]
 			},
 			"particle":{
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle minecraft:basic_flame_particle ~ ~2 ~",
 						"particle minecraft:lava_particle ~ ~1.4 ~",
@@ -310,6 +346,38 @@
 				"add": {
 							"component_groups": ["nba:creeper"]
 					   }
+			},
+			"stunned": {
+				"add": {
+				  "component_groups": [
+					"nba:stunned"
+				  ]
+				}
+			},
+			"notstunned": {
+				"remove": {
+				  "component_groups": [
+					"nba:stunned"
+				  ]
+				}
+			},
+			"corpse1": {
+				"queue_command": {
+					"command": [
+						"particle nba:cloud_red_explosion ~~1~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s corpseeffect1"
+					]
+				}
+			},
+			"corpseeffect1":{
+				"add": {
+					"component_groups": [
+					  "nbadead1"
+					]
+				  }
 			}
 		}
 	}

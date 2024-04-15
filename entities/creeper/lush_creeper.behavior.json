@@ -14,6 +14,7 @@
 				"minecraft:variant": {
 					"value": 0
 				  }
+				  
 			},
 			
 			
@@ -41,9 +42,29 @@
 					"event": "particle"
 					
 				  }
+			},
+			"nbadead1": {
+				"minecraft:transformation": {
+					"delay": 0,
+					"into": "nba:lush_creeper_corpse"
+				  }
+			},
+			"nba:stunned":{
+				"minecraft:is_stunned":{},
+				"minecraft:timer": {
+				  "looping": false,
+				  "time": 0.5,
+				  "time_down_event": {
+					"event": "notstunned"
+				  }
+				}
 			}
 		},
 		"components": {
+			"minecraft:on_death": {
+				"event": "corpse1",
+				"target": "self"
+			},
 			"minecraft:is_hidden_when_invisible": {
 			},
 			"minecraft:type_family": {
@@ -98,20 +119,36 @@
 				]
 			},
 			"minecraft:damage_sensor": {
-				"triggers": {
-					"on_damage": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								}
-							]
+				"triggers": [
+					
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									}
+								]
+							},
+							"event": "minecraft:angry"
 						},
-						"event": "minecraft:angry"
+						"deals_damage": true
+					},
+					{
+					  "on_damage": {
+						"filters": {
+						  "all_of": [
+							{ "test": "has_damage", "value": "attack" },
+							{ "test": "has_component", "subject": "self", "operator": "!=", "value": "minecraft:is_stunned" }
+						  ]
+						},
+						"event": "stunned"
+					  },
+					  "deals_damage": true
 					}
-				}
+				  ]
 			},
 			"minecraft:attack": {
 				"damage": 3
@@ -186,7 +223,7 @@
 					]
 			},
 			"particle":{
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle nba:poison_particle ~ ~1.1 ~"
 					]
@@ -201,6 +238,38 @@
 				  "add": {
 					"component_groups": [
 					  "nba:angry"
+					]
+				  }
+			},
+			"stunned": {
+				"add": {
+				  "component_groups": [
+					"nba:stunned"
+				  ]
+				}
+			},
+			"notstunned": {
+				"remove": {
+				  "component_groups": [
+					"nba:stunned"
+				  ]
+				}
+			},
+			"corpse1": {
+				"queue_command": {
+					"command": [
+						"particle nba:cloud_red_explosion ~~1~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"summon xp_orb ~ ~0.2 ~",
+						"event entity @s corpseeffect1"
+					]
+				}
+			},
+			"corpseeffect1":{
+				"add": {
+					"component_groups": [
+					  "nbadead1"
 					]
 				  }
 			}
