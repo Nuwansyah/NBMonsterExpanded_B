@@ -77,7 +77,7 @@
 					"interval": 20
 				},
 				"minecraft:attack": {
-					"damage": 3
+					"damage": 9
 				},
 				"minecraft:behavior.delayed_attack": {
 					"priority": 3,
